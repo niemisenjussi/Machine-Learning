@@ -138,7 +138,7 @@ print("x_train3d:"+str(x_train3d.shape))
 
 
 
-runmode = 'REAL' #'TESTING' #or REAL
+runmode = 'TESTING' #'TESTING' #or REAL #use REAL if you want to submitable data to kaggle
 
 #Best paramters in comments 			#86,2% so far
 nfeats =      [1500,100]				#1500,100
