@@ -138,14 +138,14 @@ print("x_train3d:"+str(x_train3d.shape))
 
 
 
-runmode = 'TESTING' #'TESTING' #or REAL
+runmode = 'REAL' #'TESTING' #or REAL
 
 #Best paramters in comments 			#86,2% so far
 nfeats =      [1500,100]				#1500,100
 filtters =    [[5,4],[1,5]]	   	#5,4  1,5
 pooling =     [[1,3],[1,2]]			#1,3  1,2
 denselayers = [500,5,1]		      #500  5,  1
-dropouts =    [0.2,0.2]			   	#0.1  0.1
+dropouts =    [0.1,0.1]			   	#0.1  0.1
 
 
 print("model parameters:")
@@ -170,7 +170,8 @@ model.add(Flatten())
 model.add(Dense(denselayers[0], activation='relu'))
 model.add(Dropout(dropouts[0]))
 model.add(Dense(denselayers[1], activation='relu')) #5 was ok
-model.add(Dense(1, activation='linear'))
+#model.add(Dense(1, activation='relu'))
+model.add(Dense(1, activation='relu'))
 print("output shape:"+str(model.output_shape))
 print(model.summary())
 
